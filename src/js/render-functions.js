@@ -17,21 +17,21 @@ export const createGalleryCard = (pictureInfo) => {
                 />
             </a>
             <div class="info">
-                <p class="text-info>Likes: ${pictureInfo.likes}</p>
-                <p class="text-info>Views: ${pictureInfo.views}</p>
-                <p class="text-info>Comments: ${pictureInfo.comments}</p>
-                <p class="text-info>Downloads: ${pictureInfo.downloads}</p>
+                <p class="text-info">Likes: <span class="number-info">${pictureInfo.likes}</span></p>
+                <p class="text-info">Views: <span class="number-info">${pictureInfo.views}</span></p>
+                <p class="text-info">Comments: <span class="number-info">${pictureInfo.comments}</span></p>
+                <p class="text-info">Downloads: <span class="number-info">${pictureInfo.downloads}</span></p>
             </div>
         </li>`;
 };
 
 export const renderGallery = (images) => {
-    imageGallery.innerHTML = ""; // очищаємо галерею
+    imageGallery.innerHTML = "";
 
     if (images.length === 0) {
         iziToast.error({
             message: "Sorry, there are no images matching your search query. Please try again!",
-            position: 'topRight'
+            position: 'topRight',
         });
         return;
     }

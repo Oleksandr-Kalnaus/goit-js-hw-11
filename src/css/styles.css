@@ -1,15 +1,4 @@
-body {
-    font-family: "Roboto", sans-serif;
-    color: #434455;
-    background-color: #fff;
-}
-
-h1,h2,h3,h4,h5,h6,p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-ul,ol {
+ul {
     list-style-type: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -30,17 +19,11 @@ img {
     height: auto;
 }
 
-input {
-    font-family: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
 .gallery-section {
-
-    margin: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 36px 156px;
 }
 
 .container {
@@ -48,16 +31,62 @@ button {
     justify-content: center;
     flex-wrap: wrap;
 }
+.search-form {
+margin-bottom: 32px;
+}
+
+.search-input {
+    width: 272px;
+    height: 40px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    width: 272px;
+    height: 40px;
+    padding: 8px 16px;
+}
+
+.search-input:enabled {
+    border: 1px solid #4e75ff;
+}
+
+.search-input::placeholder {
+    background: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.search-btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 91px;
+    height: 40px;
+    background: #4e75ff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border-style: none;
+}
+
+.search-btn:hover {
+    background: #6c8cff;
+}
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
 }
 
 .gallery-item {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     row-gap: 24px;
     border: 1px solid #808080;
     width: 360px;
@@ -66,6 +95,24 @@ button {
 
 .info {
     display: flex;
+    gap: 50px;
+}
+.text-info {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33333;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+.number-info {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
 }
 
 /*CSS-loader */
@@ -79,11 +126,9 @@ button {
     padding: 0;
 }
 
-
-.container {
-    text-align: center;
+.hidden {
+    display: none;
 }
-
 
 .loader {
     position: relative;
@@ -91,7 +136,6 @@ button {
     height: 60px;
     border-radius: 50%;
     margin: 75px;
-    display: inline-block;
     vertical-align: middle;
 }
 
