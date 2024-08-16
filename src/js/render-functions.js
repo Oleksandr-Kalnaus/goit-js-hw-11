@@ -44,4 +44,6 @@ export const renderGallery = (images) => {
         captionDelay: 250,
         overlayOpacity: 0.8,
     });
+    
+    lightbox.refresh();
 };
