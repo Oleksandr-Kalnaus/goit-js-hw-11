@@ -35,6 +35,7 @@ const onSearchForm = (event) => {
         })
         .finally(() => {
             hideLoader();
+            searchForm.reset();
         });
 };
 
