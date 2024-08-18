@@ -5,6 +5,8 @@ import iziToast from 'izitoast';
 
 const imageGallery = document.querySelector('.gallery');
 
+let lightbox;
+
 export const createGalleryCard = (pictureInfo) => {
     return `<li class="gallery-item">
             <a class="gallery-link" href="${pictureInfo.largeImageURL}">
@@ -35,15 +37,17 @@ export const renderGallery = (images) => {
         return;
     }
 
-    const galleryCardsTemplate = images.map(createGalleryCard).join('');
+const galleryCardsTemplate = images.map(createGalleryCard).join('');
     imageGallery.innerHTML = galleryCardsTemplate;
 
-    const lightbox = new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionPosition: 'bottom',
-        captionDelay: 250,
-        overlayOpacity: 0.8,
-    });
-    
+    if (!lightbox) {
+        lightbox = new SimpleLightbox('.gallery a', {
+            captionsData: 'alt',
+            captionPosition: 'bottom',
+            captionDelay: 250,
+            overlayOpacity: 0.8,
+        });
+    } 
+
     lightbox.refresh();
 };
